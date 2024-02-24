@@ -29,7 +29,12 @@ function App() {
       <br />
       <br />
       <br />
-      <ShowSelectedArray showArray={showArray} />
+      <ShowSelectedArray
+        showArray={showArray}
+        setInputInArray={setInputInArray}
+        inputInArray={inputInArray}
+        setShowArray={setShowArray}
+      />
     </>
   );
 }
