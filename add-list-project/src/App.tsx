@@ -16,8 +16,9 @@ function App() {
   useEffect(() => {
     const newArray = inputArray.filter((i) => !inputInArray.includes(i));
     setShowArray(newArray);
-    console.log(inputInArray);
   }, [inputInArray]);
+
+  useEffect(() => {}, [showArray]);
 
   return (
     <>
@@ -28,12 +29,7 @@ function App() {
       <br />
       <br />
       <br />
-      <ShowSelectedArray
-        showArray={showArray}
-        setShowArray={setShowArray}
-        inputInArray={inputInArray}
-        setInputInArray={setInputInArray}
-      />
+      <ShowSelectedArray showArray={showArray} />
     </>
   );
 }
