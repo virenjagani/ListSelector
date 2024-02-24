@@ -7,10 +7,19 @@ import { inputArray } from "./constants/inputArray/InputArray";
 
 function App() {
   const [inputInArray, setInputInArray] = useState<InputArray>([]);
+  const [showArray, setShowArray] = useState<InputArray>([]);
 
   useEffect(() => {
     setInputInArray(inputArray);
   }, []);
+
+  useEffect(() => {
+    const newArray = inputArray.filter((i) => !inputInArray.includes(i));
+    setShowArray(newArray);
+  }, [inputInArray]);
+
+  useEffect(() => {}, [showArray]);
+
   return (
     <>
       <SelectArray
@@ -20,7 +29,7 @@ function App() {
       <br />
       <br />
       <br />
-      <ShowSelectedArray />
+      <ShowSelectedArray showArray={showArray} />
     </>
   );
 }

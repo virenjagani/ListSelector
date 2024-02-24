@@ -1,7 +1,11 @@
 import type { Props } from "./SelectArray.d";
 
 const SelectArray: React.FC<Props> = ({ inputInArray, setInputInArray }) => {
-  const handleSelectButton = (item: number) => {};
+  const handleSelectButton = (item: number) => {
+
+    const newArray = inputInArray.filter(i=> i !== item)
+    setInputInArray(newArray);
+  };
 
   return (
     <div
