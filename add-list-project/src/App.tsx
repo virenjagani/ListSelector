@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     setInputInArray(inputArray);
   }, []);
+  //change store
 
   useEffect(() => {
     const newArray = inputArray.filter((i) => !inputInArray.includes(i));
